@@ -13,7 +13,7 @@ class DynaTreeWidget(tw2_jq_ui.JQueryUIWidget):
     resources = [
         tw2.jquery.jquery_js,
         tw2_jq_ui.jquery_ui_js, tw2_jq_ui.jquery_ui_css,
-        base.dynatree_js, base.dynatree_css, base.dynatree_utils_js,
+        base.dynatree_js, base.dynatree_css,
     ]
     template = "tw2.jqplugins.dynatree.templates.dynatree"
 

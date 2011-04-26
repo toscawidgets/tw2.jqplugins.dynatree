@@ -16,9 +16,5 @@ dynatree_js = twjq_c.jQueryPluginJSLink(
     modname='tw2.jqplugins.dynatree',
     subdir = '',
 )
-dynatree_utils_js = twc.JSLink(
-    modname='tw2.jqplugins.dynatree',
-    filename='static/js/dynatree-utils.js',
-)
 
-__all__ = ['dynatree_js', 'dynatree_css', 'dynatree_utils_js']
+__all__ = ['dynatree_js', 'dynatree_css']

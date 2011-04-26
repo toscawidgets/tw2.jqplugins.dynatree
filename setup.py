@@ -11,7 +11,7 @@ _extra_mako = ["Mako >= 0.1.1"]
 
 setup(
     name='tw2.jqplugins.dynatree',
-    version='2.0a0',
+    version='2.0a1',
     description='toscawidgets2 wrapper for the dynatree jQuery plugin',
     long_description=long_description,
     author='Ralph Bean',
