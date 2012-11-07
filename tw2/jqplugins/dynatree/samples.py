@@ -11,6 +11,7 @@ from tw2.core.resources import encoder
 
 from widgets import DynaTreeWidget
 
+
 class DemoDynaTree(DynaTreeWidget):
     options = {
         'onActivate': twc.JSSymbol(
