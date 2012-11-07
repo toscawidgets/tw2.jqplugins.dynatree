@@ -3,7 +3,7 @@
 
 from tw2.core.resources import encoder
 import tw2.core as twc
-
+from tw2.core.js import js_function, js_callback
 import tw2.jquery
 import tw2.jqplugins.ui.base as tw2_jq_ui
 
@@ -17,8 +17,15 @@ class DynaTreeWidget(tw2_jq_ui.JQueryUIWidget):
     ]
     template = "tw2.jqplugins.dynatree.templates.dynatree"
 
+    selector = twc.Variable("Escaped id.  jQuery selector.")
     options = twc.Param("Configuration options to pass to dynatree", default={})
 
     def prepare(self):
-        self._options = encoder.encode(self.options)
+        if 'id' in self.attrs:
+            self.selector = "#" + self.attrs['id'].replace(':', '\\:')
+
+        self.add_call(js_function("$(document).ready")(js_callback(
+            tw2.jquery.jQuery(self.selector).dynatree(self.options)
+        )))
         super(DynaTreeWidget, self).prepare()
+
